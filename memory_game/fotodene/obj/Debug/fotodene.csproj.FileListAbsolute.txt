@@ -1,0 +1,10 @@
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\bin\Debug\fotodene.exe.config
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\bin\Debug\fotodene.exe
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\bin\Debug\fotodene.pdb
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\obj\Debug\fotodene.csproj.AssemblyReference.cache
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\obj\Debug\fotodene.Form1.resources
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\obj\Debug\fotodene.Properties.Resources.resources
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\obj\Debug\fotodene.csproj.GenerateResource.cache
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\obj\Debug\fotodene.csproj.CoreCompileInputs.cache
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\obj\Debug\fotodene.exe
+C:\Users\ahayd\OneDrive\Masaüstü\dönem 5\pro3 csharp\fotodene\fotodene\obj\Debug\fotodene.pdb
