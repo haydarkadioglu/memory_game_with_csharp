@@ -15,7 +15,8 @@ namespace fotodene
     {
         private int controller = 0, pointUsr1 = 0, pointUsr2 = 0, usr1 = 0,usr2 = 1, numOfTry = 0, temp1 = 0, temp2 = 0, remainingTime;
         private List<int> num2 = new List<int>();
-        private  dynamic path = "C:\\Users\\ahayd\\OneDrive\\Masaüstü\\dönem 5\\pro3 csharp\\fotodene\\fotodene\\foto\\";
+        private string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\foto");
+        private dynamic path = "..\\..\\foto\\";
         private List<int> num1 = new List<int>();
         private PictureBox firstClick, secondClick;
         private Timer timer = new Timer();
@@ -23,7 +24,7 @@ namespace fotodene
         public Form1()
         {
             InitializeComponent();
-            MessageBox.Show("bu pencereyi kapattığınızda oyun balar", ProductName, MessageBoxButtons.OKCancel);
+            MessageBox.Show("bu pencereyi kapattığınızda oyun başlar", ProductName, MessageBoxButtons.OKCancel);
             
             
             counter();
@@ -46,11 +47,19 @@ namespace fotodene
             counter();
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void hide() {
             List<PictureBox> pictureBoxes = new List<PictureBox>() {
                 pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9,
-                pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20
+                pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20,
+                pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30,
+                pictureBox31, pictureBox32, pictureBox33, pictureBox34, pictureBox35, pictureBox36, pictureBox37, pictureBox38, pictureBox39, pictureBox40
             };
+
 
             foreach (PictureBox pictureBox in pictureBoxes)
             {
@@ -88,37 +97,43 @@ namespace fotodene
         {
             num2.Clear();
             num1.Clear();
-            string[] files = Directory.GetFiles(path, "*.png");
+            string[] files = Directory.GetFiles(folderPath, "*.png");
 
             List<string> imagePaths = files.ToList();
-            List<PictureBox> pictureBoxes = new List<PictureBox>() {pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9,
-            pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20
+            List<PictureBox> pictureBoxes = new List<PictureBox>() {
+                pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9,
+                pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20,
+                pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30,
+                pictureBox31, pictureBox32, pictureBox33, pictureBox34, pictureBox35, pictureBox36, pictureBox37, pictureBox38, pictureBox39, pictureBox40
             };
 
-            List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
 
+            Random rand = new Random(); // Random nesnesi döngü dışında tanımlanmalı
             foreach (PictureBox file in pictureBoxes)
             {
-                if (imagePaths.Count > 0)
+                if (imagePaths.Count > 0 && numbers.Count > 0)
                 {
-                    Random rand = new Random();
-                    int randomIndex = rand.Next(0, numbers.Count);
+                    int randomIndex = rand.Next(0, numbers.Count); // 0'dan numbers.Count'a kadar
                     int selectedNumber = numbers[randomIndex];
 
-                    num1.Add(selectedNumber); 
+                    num1.Add(selectedNumber);
                     numbers.RemoveAt(randomIndex);
 
                     file.SizeMode = PictureBoxSizeMode.StretchImage;
                     file.Image = Image.FromFile(imagePaths[selectedNumber]);
                 }
             }
-            this.num2 = new List<int>(num1);  
+            this.num2 = new List<int>(num1);
         }
+
         private void showAgain()
         {
             List<PictureBox> pictureBoxes = new List<PictureBox>() {
-             pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9,
-             pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20
+                pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9,
+                pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20,
+                pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30,
+                pictureBox31, pictureBox32, pictureBox33, pictureBox34, pictureBox35, pictureBox36, pictureBox37, pictureBox38, pictureBox39, pictureBox40
             };
 
 
@@ -226,7 +241,7 @@ namespace fotodene
                 temp1 = 0;
                 temp2 = 0;
             }
-            if (numOfTry == 10)
+            if (numOfTry == 11)
             {
 
 
@@ -257,12 +272,14 @@ namespace fotodene
             pointUsr2 = 0;
             num1.Clear();
             num2.Clear();
-            label4.Text = label5.Text = "Puan:"; 
+            label4.Text = label5.Text = "Puan:";
 
             List<PictureBox> pictureBoxes = new List<PictureBox>() {
-        pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9,
-        pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20
-    };
+                pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9,
+                pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18, pictureBox19, pictureBox20,
+                pictureBox21, pictureBox22, pictureBox23, pictureBox24, pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30,
+                pictureBox31, pictureBox32, pictureBox33, pictureBox34, pictureBox35, pictureBox36, pictureBox37, pictureBox38, pictureBox39, pictureBox40
+            };
 
             foreach (PictureBox pictureBox in pictureBoxes)
             {
